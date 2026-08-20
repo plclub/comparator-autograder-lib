@@ -1,0 +1,6 @@
+name = "ComparatorAutograderLib"
+version = "0.1.0"
+defaultTargets = ["ComparatorAutograderLib"]
+
+[[lean_lib]]
+name = "ComparatorAutograderLib"
