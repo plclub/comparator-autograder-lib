@@ -12,12 +12,12 @@ syntax num : ptVal
 syntax scientific : ptVal
 syntax num "/" num : ptVal
 
-syntax (name := autograded_proof) "autogradedProof" ptVal : attr
-syntax (name := autograded_hole) "autogradedHole" : attr
+syntax (name := autogradedProof) "autogradedProof" ptVal : attr
+syntax (name := autogradedHole) "autogradedHole" : attr
 
 initialize autogradedProofAttr : ParametricAttribute Rat ←
   registerParametricAttribute {
-    name := `autograded_proof
+    name := `autogradedProof
     descr := "Specifies the point value of a problem"
     getParam := λ _ stx => match stx with
       | `(attr| autogradedProof $pts:num) => return pts.getNat
@@ -37,7 +37,7 @@ initialize autogradedProofAttr : ParametricAttribute Rat ←
 
 initialize autogradedHoleAttr : ParametricAttribute Unit ←
   registerParametricAttribute {
-    name := `autograded_hole
+    name := `autogradedHole
     descr := "Specifies a definition to be a hole"
     getParam := λ _ stx => match stx with
       | `(attr| autogradedHole) => return ()
